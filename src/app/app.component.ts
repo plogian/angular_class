@@ -9,8 +9,7 @@ export class AppComponent {
 	showPage = "Recipes";
 
 	changeShowPage(event) {
-		console.log(event.page);
-		this.showPage = event.page;
+		this.showPage = event;
 	}
 
 }
