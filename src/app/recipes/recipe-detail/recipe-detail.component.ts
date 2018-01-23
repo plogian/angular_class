@@ -19,9 +19,10 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   addToShoppingList() {
-  	for(var i = 0; i<this.recipe.ingredients.length; i++ ) {
-  		this.shoppingListService.addShoppingItem(this.recipe.ingredients[i]);
-  	}
+  	// for(var i = 0; i<this.recipe.ingredients.length; i++ ) {
+  	// 	this.shoppingListService.addShoppingItem(this.recipe.ingredients[i]);
+  	// }
+  	this.shoppingListService.addShoppingItems(this.recipe.ingredients);
   }
 
 }
