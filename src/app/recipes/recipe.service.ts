@@ -30,4 +30,8 @@ export class RecipeService {
 	getRecipes() {
 		return this.recipes.slice();  //add slice, so we only get a copy of the array, so we can't make changes directly
 	}
+
+	getRecipe(index: number) {
+		return this.recipes[index]
+	}
 }
