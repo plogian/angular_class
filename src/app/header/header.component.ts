@@ -1,7 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { ServersService } from '../servers.service';
-import { Recipe } from '../recipes/recipe.model';
-import { RecipeService } from '../recipes/recipe.service';
 
 @Component({
   selector: 'app-header',
@@ -9,18 +7,14 @@ import { RecipeService } from '../recipes/recipe.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-	recipes;
-
-	constructor(private serversService: ServersService,
-		private recipeService: RecipeService) { }
+	constructor(private serversService: ServersService) { }
 
 	ngOnInit() {
 
 	}
 
 	onSave() {
-		this.recipes = this.recipeService.getRecipes();
-		this.serversService.onSaveRecipes(this.recipes)
+		this.serversService.onSaveRecipes()
 			.subscribe(
 				(response) => console.log(response)
 				);
@@ -28,8 +22,5 @@ export class HeaderComponent implements OnInit {
 
 	onFetch() {
 		this.serversService.onGetRecipes()
-			.subscribe(
-				(response) => console.log(response)
-				);
 	}
 }

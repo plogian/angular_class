@@ -26,6 +26,11 @@ export class RecipeService {
 			]),
 	];
 
+	setRecipes(recipes: Recipe[]) {
+		this.recipes = recipes;
+		this.recipesChanged.next(this.recipes.slice());
+	}
+
 	getRecipes() {
 		return this.recipes.slice();  //add slice, so we only get a copy of the array, so we can't make changes directly
 	}
