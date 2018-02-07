@@ -8,6 +8,7 @@
 
 # dependencies
 /node_modules
+/src/
 
 # IDEs and editors
 /.idea
@@ -41,3 +42,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#auth
+/src/app/app.component.ts
