@@ -10,11 +10,11 @@ export class ServersService {
   constructor(private http: Http, private recipeService: RecipeService) { }
 
   onSaveRecipes() {
-  	return this.http.put('https://recipe-book-4dfe0.firebaseio.com/recipes.json', this.recipeService.getRecipes())
+  	return this.http.put('https://recipe-book-3d02e.firebaseio.com/recipes.json', this.recipeService.getRecipes())
   }
 
   onGetRecipes() {
-  	this.http.get('https://recipe-book-4dfe0.firebaseio.com/recipes.json')
+  	this.http.get('https://recipe-book-3d02e.firebaseio.com/recipes.json')
       .map (
         (response: Response) => {
           const recipes: Recipe[] = response.json();
